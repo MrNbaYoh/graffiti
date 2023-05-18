@@ -8,10 +8,10 @@ use crate::successors::Successors;
 pub trait Graph: Sized {
     //TODO: add lifetime on indices?
     type NodeIdx: Index;
-    type Nodes: Nodes<Self>;
+    type Nodes: Nodes<Graph = Self>;
 
     type EdgeFamily: EdgeFamily;
-    type Edges: Edges<Self>;
+    type Edges: Edges<Graph = Self>;
 
     //type NeighborIter: Iterator<Item = Self::NodeIdx>;
     //TODO: lifetime on iters?
